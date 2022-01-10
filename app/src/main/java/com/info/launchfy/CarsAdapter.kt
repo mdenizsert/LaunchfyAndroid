@@ -11,7 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 class CarsAdapter(private val mContext:Context, private val carsList:List<Cars>)
     : RecyclerView.Adapter<CarsAdapter.CardDesignObjectsHolder>(){
 
-    inner class CardDesignObjectsHolder(view:View):RecyclerView.ViewHolder(view){
+    private lateinit var mListener : onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setOnItemClickListener(listener: onItemClickListener){
+
+        mListener = listener
+    }
+
+    inner class CardDesignObjectsHolder(view:View, listener: onItemClickListener):RecyclerView.ViewHolder(view){
 
         var imageViewCarImage:ImageView
         var textViewCarModel:TextView
@@ -22,6 +33,11 @@ class CarsAdapter(private val mContext:Context, private val carsList:List<Cars>)
             imageViewCarImage = view.findViewById(R.id.imageViewCarImage)
             textViewCarModel = view.findViewById(R.id.textViewCarModel)
             textViewCity = view.findViewById(R.id.textViewCity)
+
+            view.setOnClickListener {
+
+                listener.onItemClick(adapterPosition)
+            }
         }
     }
 
@@ -32,7 +48,7 @@ class CarsAdapter(private val mContext:Context, private val carsList:List<Cars>)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CardDesignObjectsHolder {
         val design = LayoutInflater.from(mContext).inflate(R.layout.card_event,parent,false)
 
-        return CardDesignObjectsHolder(design)
+        return CardDesignObjectsHolder(design,mListener)
     }
 
     override fun onBindViewHolder(holder: CardDesignObjectsHolder, position: Int) {

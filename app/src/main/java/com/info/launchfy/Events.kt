@@ -1,5 +1,7 @@
 package com.info.launchfy
 
+
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -36,6 +38,17 @@ class Events : AppCompatActivity() {
         adapter = CarsAdapter(this,carsArrayList)
 
         rvEvents.adapter = adapter
+        adapter.setOnItemClickListener(object : CarsAdapter.onItemClickListener{
+
+
+            override fun onItemClick(position: Int) {
+
+                val Intent = Intent(this@Events, CommentActivity::class.java)
+                startActivity(Intent)
+            }
+
+
+        })
 
     }
 
