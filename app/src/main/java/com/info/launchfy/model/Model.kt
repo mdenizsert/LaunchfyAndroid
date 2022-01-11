@@ -60,7 +60,7 @@ data class Photos(
 
 data class SuccessResult(
         @SerializedName("success")
-        val Success:Boolean,
+        val success:Boolean,
         @SerializedName("message")
         val message:String?
 ){}
@@ -75,7 +75,7 @@ data class EventResult(
 ){}
 data class PhotoResult(
         @SerializedName("data")
-        val event:List<Photos>,
+        val photos:List<Photos>,
         @SerializedName("success")
         val success:Boolean,
         @SerializedName("message")

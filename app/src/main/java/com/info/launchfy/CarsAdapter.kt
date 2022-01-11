@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.info.launchfy.model.Car
+import com.info.launchfy.util.downloadFromUrl
 
 class CarsAdapter(private val mContext:Context, private val carsList:List<Car>)
     : RecyclerView.Adapter<CarsAdapter.CardDesignObjectsHolder>(){
@@ -57,6 +58,7 @@ class CarsAdapter(private val mContext:Context, private val carsList:List<Car>)
 
         holder.textViewCarModel.text = car.car_model
         holder.textViewCity.text = car.city
+
 
         holder.imageViewCarImage.setImageResource(
                 mContext.resources.getIdentifier(car.car_image_name,"drawable",mContext.packageName))
