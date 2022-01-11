@@ -7,64 +7,101 @@
     android:background="#222222"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="273dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="35dp"
-        android:background="#303030"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPersonName|textPassword"
-        android:padding="8dp"
-        android:password="true"
-        android:shadowColor="@color/black"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/login_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:id="@+id/editTextTextPersonName"
-        android:layout_width="273dp"
-        android:layout_height="51dp"
-        android:layout_marginBottom="29dp"
-        android:background="#303030"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textPersonName|textEmailSubject"
-        android:padding="8dp"
-        android:shadowColor="@color/black"
-        android:textColor="@color/white"
-        android:textColorHint="@color/white"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName2"
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledTextField"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:hint="Password"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filledEmail"
+        app:passwordToggleEnabled="true"
+        app:errorEnabled="true">
+
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/login_button"
-        android:layout_width="134dp"
-        android:layout_height="65dp"
-        android:layout_marginBottom="127dp"
-        android:text="Logın"
+        android:id="@+id/btnSignIn"
+        android:layout_width="165dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="40dp"
+        android:shadowRadius="12"
+        android:text="Sign In"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
         app:backgroundTint="#303030"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/filledTextField" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/filledEmail"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="32dp"
+        android:focusable="auto"
+        android:hint="Email"
+        app:boxCornerRadiusBottomEnd="10dp"
+        app:boxCornerRadiusBottomStart="10dp"
+        app:boxCornerRadiusTopEnd="10dp"
+        app:boxCornerRadiusTopStart="10dp"
+        app:errorEnabled="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.75"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ivUserLogo"
+        app:layout_constraintVertical_bias="0.153">
+
+
+        <!--this is the actual edit text which takes the input-->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/txtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="242dp"
-        android:layout_height="202dp"
-        android:layout_marginBottom="26dp"
-        app:layout_constraintBottom_toTopOf="@+id/editTextTextPersonName"
+        android:id="@+id/ivUserLogo"
+        android:layout_width="163dp"
+        android:layout_height="219dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/pfkmlflk" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/pfkmlflk"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

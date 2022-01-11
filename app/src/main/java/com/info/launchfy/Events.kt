@@ -7,10 +7,11 @@ import android.os.Bundle
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import com.info.launchfy.model.Car
 
 class Events : AppCompatActivity() {
 
-    private lateinit var carsArrayList: ArrayList<Cars>
+    private lateinit var carsArrayList: ArrayList<Car>
     private lateinit var adapter: CarsAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,12 +25,12 @@ class Events : AppCompatActivity() {
 
 
 
-        val c1 = Cars(1,"C180","Lisbon","c180")
-        val c2 = Cars(2,"E180","Mallorca","e180")
-        val c3 = Cars(3,"G63","Istanbul","g63")
+        val c1 = Car(1, "C180", "Lisbon", "c180")
+        val c2 = Car(2, "E180", "Mallorca", "e180")
+        val c3 = Car(3, "G63", "Istanbul", "g63")
 
 
-        carsArrayList = ArrayList<Cars>()
+        carsArrayList = ArrayList<Car>()
         carsArrayList.add(c1)
         carsArrayList.add(c2)
         carsArrayList.add(c3)

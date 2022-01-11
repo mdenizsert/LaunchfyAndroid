@@ -7,8 +7,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.info.launchfy.model.Car
 
-class CarsAdapter(private val mContext:Context, private val carsList:List<Cars>)
+class CarsAdapter(private val mContext:Context, private val carsList:List<Car>)
     : RecyclerView.Adapter<CarsAdapter.CardDesignObjectsHolder>(){
 
     private lateinit var mListener : onItemClickListener
